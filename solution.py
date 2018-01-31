@@ -26,6 +26,7 @@ def read_file(file_name,lines):
 # Calculate the Distance between points
 def calculate_distance(file_contents):
     invite = []
+    distance_loc = []
     for index, row in file_contents.iterrows():
         # Needs to be converted into radians
         diff_long = radians(INTERCOM_LONG) - radians(row['longitude'])
@@ -36,6 +37,8 @@ def calculate_distance(file_contents):
         c = 2 * atan2(sqrt(a), sqrt(1 - a))
         # Final distance in kms
         distance = RADIUS_EARTH * c
+        # Creating a new feature to store the distance
+        distance_loc.append(distance)
         # Creating a new feature based on invite selection criteria
         if distance <= 100:
             invite.append('yes')
@@ -44,6 +47,8 @@ def calculate_distance(file_contents):
 
     # Appending the newly created feature to the dataframe
     file_contents['invite'] = invite
+    # Appending the newly created distnace feature to the dataframe
+    file_contents['distance'] = distance_loc
 
 def main():
     url = 'https://gist.githubusercontent.com/brianw/19896c50afa89ad4dec3/raw/6c11047887a03483c50017c1d451667fd62a53ca/gistfile1.txt'
