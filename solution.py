@@ -1,3 +1,10 @@
+#/**************************************************************/
+#       solution.py -- Distance between two locations           *
+#       Author:  Adwitiya Chakraborty                           *
+#                chakraad@tcd.ie                                *
+#                github.com/adwitiya                            *
+#/**************************************************************/
+
 import pandas as pd
 from math import sin, cos, sqrt, atan2, radians
 INTERCOM_LONG =  -6.257664
