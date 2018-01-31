@@ -34,14 +34,14 @@ def calculate_distance(file_contents):
         # Great Circle Distance Formula
         a = sin(diff_lat / 2) ** 2 + cos(row['latitude']) * cos(INTERCOM_LAT) * sin(diff_long / 2) ** 2
         c = 2 * atan2(sqrt(a), sqrt(1 - a))
-
+        # Final distance in kms
         distance = RADIUS_EARTH * c
         # Creating a new feature based on invite selection criteria
         if distance <= 100:
             invite.append('yes')
         else:
             invite.append('no')
-            
+
     # Appending the newly created feature to the dataframe
     file_contents['invite'] = invite
 
