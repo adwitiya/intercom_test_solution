@@ -12,7 +12,7 @@ from tabulate import tabulate
 # Global Constants
 INTERCOM_LONG =  -6.257664
 INTERCOM_LAT = 53.339428
-RADIUS_EARTH = 6373.0 #Approx Radius of earth in KMs
+RADIUS_EARTH = 6373.0  # Approx Radius of earth in KMs
 
 # Reads the file using Pandas,
 def read_file(file_name,lines):
